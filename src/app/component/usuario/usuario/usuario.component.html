@@ -1,0 +1,24 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<div style=" position: fixed;
+    top:20%;
+    left: 10%;">
+	<table class="table table-dark">
+		<thead>
+			<tr>
+				<th scope="col">Id</th>
+				<th scope="col">Nome</th>
+				<th scope="col">E-mail</th>
+				<th scope="col">Data de nascimento</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let usuario of usuarios">
+				<th scope="col">{{usuario.id}}</th>
+				<td scope="col">{{usuario.nome}}</td>
+				<td scope="col">{{usuario.email}}</td>
+				<td scope="col">{{usuario.dataNascimento}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

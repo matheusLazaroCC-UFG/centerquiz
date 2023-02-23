@@ -1,0 +1,32 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+<div class="mat-dialog-container">
+	<div class="container modal fade show d-block" id="conclusoes-modal"
+		style="background-color: white; border-color: black;">
+		<div class="modal-header">
+			<h5 class="modal-title">Conclusões da questão</h5>
+			<button type="button" class="close" (click)="fecharConclusoes()">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+		<div class="modal-body">
+			<p class="lead mb-4">Abaixo, você pode conferir suas respostas:</p>
+			<hr>
+
+			<div *ngFor="let conclusao of conclusoes; let i = index">
+				<h4>Conclusão {{ i + 1 }} - {{ conclusao.dataConclusao }}</h4>
+				<div *ngIf="conclusao.acertou === 'SIM'">
+					<p class="text-success">Você acertou!</p>
+				</div>
+				<div *ngIf="conclusao.acertou === 'NÃO'">
+					<p class="text-danger">Você errou.</p>
+				</div>
+				<hr>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-secondary" (click)="fecharConclusoes()">Fechar</button>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,105 @@
+<main _ngcontent-dxr-c47="" class="py-6 bg-surface-secondary" style=" position: absolute;
+    top:20%;
+    left: 10%;">
+	<div _ngcontent-dxr-c47="" class="container-fluid">
+		<!-- Menu ADM -->
+		<div [hidden]="!isAdm()">
+			<div _ngcontent-dxr-c47="" class="row g-6 mb-6">
+
+				<div _ngcontent-dxr-c47="" class="col-xl-3 col-sm-6 col-12">
+					<a class="nav-link" [routerLink]="['/cadastrar-questionario']" routerLinActive="router-link-active">
+						<div _ngcontent-dxr-c47="" class="card shadow border-0" style="background-color: #3f6ad8;">
+
+							<div _ngcontent-dxr-c47="" class="row">
+
+								<div _ngcontent-dxr-c47="" class="card-body">
+									<div _ngcontent-dxr-c47="" class="col"><span _ngcontent-dxr-c47=""
+											class="h6 font-semibold text-muted text-sm d-block mb-2"></span><span
+											_ngcontent-dxr-c47="" class="h3 font-bold mb-0"><i class="bi bi-journal-plus"> Cadastro de novo Questionário</i></span>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</a>
+				</div>
+
+				<div _ngcontent-dxr-c47="" class="col-xl-3 col-sm-6 col-12">
+					<a class="nav-link" [routerLink]="['/cadastrar-questao']" routerLinActive="router-link-active">
+						<div _ngcontent-dxr-c47="" class="card shadow border-0" style="background-color: #3f6ad8;">
+							<div _ngcontent-dxr-c47="" class="card-body">
+								<div _ngcontent-dxr-c47="" class="row">
+									<div _ngcontent-dxr-c47="" class="col"><span _ngcontent-dxr-c47=""
+											class="h6 font-semibold text-muted text-sm d-block mb-2"></span><span
+											_ngcontent-dxr-c47="" class="h3 font-bold mb-0"><i class="bi bi-file-plus"> Cadastro de nova Questão</i></span></div>
+
+								</div>
+
+							</div>
+						</div>
+					</a>
+				</div>
+				<div _ngcontent-dxr-c47="" class="col-xl-3 col-sm-6 col-12">
+					<a class="nav-link" [routerLink]="['/cadastrar-usuario']" routerLinActive="router-link-active">
+						<div _ngcontent-dxr-c47="" class="card shadow border-0" style="background-color: #3f6ad8;">
+							<div _ngcontent-dxr-c47="" class="card-body">
+								<div _ngcontent-dxr-c47="" class="row">
+									<div _ngcontent-dxr-c47="" class="col"><span _ngcontent-dxr-c47=""
+											class="h6 font-semibold text-muted text-sm d-block mb-2"></span><span
+											_ngcontent-dxr-c47="" class="h3 font-bold mb-0"><i class="bi bi-person-plus"> Cadastro de novo Usuário</i></span>
+									</div>
+
+								</div>
+
+							</div>
+						</div>
+					</a>
+				</div>
+				<div _ngcontent-dxr-c47="" class="col-xl-3 col-sm-6 col-12">
+					<a class="nav-link" [routerLink]="['/analise-dados']"
+						routerLinActive="router-link-active">
+						<div _ngcontent-dxr-c47="" class="card shadow border-0" style="background-color: #3f6ad8;">
+							<div _ngcontent-dxr-c47="" class="card-body">
+								<div _ngcontent-dxr-c47="" class="row">
+									<div _ngcontent-dxr-c47="" class="col"><span _ngcontent-dxr-c47=""
+											class="h6 font-semibold text-muted text-sm d-block mb-2"></span><span
+											_ngcontent-dxr-c47="" class="h3 font-bold mb-0"><i class="bi bi-journal-text"> Análise gráfica de dados</i></span>
+									</div>
+
+								</div>
+
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div _ngcontent-dxr-c47="" class="card shadow border-0 mb-7">
+				<div _ngcontent-dxr-c47="" class="card-header">
+					<h5 _ngcontent-dxr-c47="" class="mb-0">Questionários</h5>
+				</div>
+				<div _ngcontent-dxr-c47="" class="table-responsive">
+					<table _ngcontent-dxr-c47="" class="table table-hover table-nowrap">
+						<thead _ngcontent-dxr-c47="" class="thead-light">
+							<tr _ngcontent-dxr-c47="">
+								<th _ngcontent-dxr-c47="" scope="col">Id</th>
+								<th _ngcontent-dxr-c47="" scope="col">Nome</th>
+								<th _ngcontent-dxr-c47="" scope="col">Data de início</th>
+								<th _ngcontent-dxr-c47="" scope="col">Opções</th>
+								<th _ngcontent-dxr-c47=""></th>
+							</tr>
+						</thead>
+						<tbody _ngcontent-dxr-c47="">
+
+							<tr _ngcontent-dxr-c47="" *ngFor="let questionario of questionarios">
+								<th scope="col">{{questionario.idBancoDeQuestoes}}</th>
+								<td scope="col">{{questionario.nome}}</td>
+								<td scope="col">{{questionario.dataInicio}}</td>
+								<td scope="col"><button class="btn btn-primary" (click)="acessarQuestionario(questionario.id)"><i class="bi bi-clipboard-check"> Abrir</i></button></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>

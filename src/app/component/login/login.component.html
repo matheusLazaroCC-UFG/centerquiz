@@ -1,0 +1,70 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<section class="h-100 gradient-form" style="background-color: #eee;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-xl-10">
+        <div class="card rounded-3 text-black">
+          <div class="row g-0">
+            <div class="col-lg-6">
+              <div class="card-body p-md-5 mx-md-4">
+
+                <div class="text-center">
+                  <img src="https://docs.google.com/uc?id=1n5MXEVAsesx5W4zbO1hgXd-t4iVb4MDh" 
+                    style="width: 300px;" alt="logo">
+                  <h4 class="mt-1 mb-5 pb-1">Acesse o nosso sistema!</h4>
+                </div>
+
+                <form>
+                  <p>Por favor, faça login na sua conta</p>
+
+                  <div class="form-outline mb-4">
+                    <input 	type="email"
+                    		required #validadorEmail="ngModel"
+                    		[(ngModel)] = "usuario.email"
+                    		name="email"
+                    		id="email"
+                    		class="form-control"
+                      		placeholder="Digite o seu E-mail cadastrado!" />
+                    <label class="form-label" for="email">E-mail</label>
+                    <div *ngIf="validadorEmail.invalid" class="alert alert-danger">
+                    	O campo de e-mail é obrigatório!
+                    </div>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input 	type="password"
+                    		required #validadorSenha="ngModel"
+                    		[(ngModel)] = "usuario.senha"
+                    		name="senha"
+                    		id="senha"
+                    		class="form-control" />
+                    <label class="form-label" for="senha">Senha</label>
+                    <div *ngIf="validadorSenha.invalid" class="alert alert-danger">
+                    	O campo de senha é obrigatório!
+                    </div>
+                  </div>
+                  
+                  <div class="text-center pt-1 mb-5 pb-1">
+                    <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
+                    		[disabled]="validadorEmail.invalid || validadorSenha.invalid"
+                    		type="button"
+                    		(click)="login()">Entrar</button>
+                  </div>
+
+                </form>
+
+              </div>
+            </div>
+            <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+              <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                <h4 class="mb-4" style="color: #55a162;">Crie, gerencie ou resolva questionários</h4>
+                <p class="small mb-0">Criação e resolução de questionários para: a avaliação de negócios, o treinamento profissional, a educação com testes, avaliações pré-contratação técnica e de personalidade, o recrutamento, questionários de saúde e segurança, dentre outros possíveis...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

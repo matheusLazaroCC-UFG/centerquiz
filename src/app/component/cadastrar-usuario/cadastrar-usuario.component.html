@@ -1,0 +1,54 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+<div class="container-fluid" style="position: absolute; top: 100px; left: auto;">
+	<div class="row justify-content-center">
+		<div class="col-md-6">
+			<h2 class="text-center mb-5">Cadastro de Usuário</h2>
+			<div class="card">
+				<div class="card-body">
+					<form #formUsuario="ngForm" (submit)="cadastrarUsuario(formUsuario)">
+						<div class="form-group">
+							<label for="nome">Nome:</label>
+							<input type="text" id="nome" name="nome" class="form-control" [(ngModel)]="usuario.nome"
+								required (ngModelChange)="atualizaFormularioInvalido()">
+						</div>
+						<div class="form-group">
+							<label for="email">E-mail:</label>
+							<input type="email" id="email" name="email" class="form-control" [(ngModel)]="usuario.email"
+								required (ngModelChange)="atualizaFormularioInvalido()">
+							<div *ngIf="emailInvalido" class="invalid-feedback">E-mail inválido</div>
+						</div>
+						<div class="form-group">
+							<label for="senha">Senha:</label>
+							<input type="password" id="senha" name="senha" class="form-control"
+								[(ngModel)]="usuario.senha" required (ngModelChange)="atualizaFormularioInvalido()">
+							<div *ngIf="senhaInvalida" class="invalid-feedback">A senha deve ter no mínimo 8
+								caracteres</div>
+						</div>
+						<div class="form-group">
+							<label for="tipoUsuario">Tipo de Usuário:</label>
+							<select id="tipoUsuario" name="tipoUsuario" class="form-control"
+								[(ngModel)]="usuario.tipoUsuario">
+								<option value="0">Administrador</option>
+								<option value="1">Usuário comum</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="dataNascimento">Data de Nascimento:</label>
+							<input type="date" id="dataNascimento" name="dataNascimento" class="form-control"
+								[(ngModel)]="usuario.dataNascimento" required
+								(ngModelChange)="atualizaFormularioInvalido()">
+						</div>
+						<div class="form-group">
+							<label for="endereco">Contato:</label>
+							<textarea id="endereco" name="endereco" class="form-control" [(ngModel)]="usuario.endereco"
+								required (ngModelChange)="atualizaFormularioInvalido()"></textarea>
+						</div>
+						<button type="submit" class="btn btn-primary" [disabled]="formularioInvalido">Cadastrar</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
