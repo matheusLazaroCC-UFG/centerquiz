@@ -40,6 +40,7 @@
 		"@types/chart.js": "^2.9.37",
 		"@types/jasmine": "~3.6.0",
 		"@types/node": "^12.11.1",
+		"angular-cli-ghpages": "^1.0.5",
 		"angular-ide": "^0.9.77",
 		"codelyzer": "^6.0.0",
 		"jasmine-core": "~3.6.0",
